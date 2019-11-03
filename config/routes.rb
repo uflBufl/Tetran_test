@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get 'black'    => 'customers#black'
   post 'black' => 'customers#black_true'
   delete 'black' => 'customers#black_false'
+  delete 'black/home' => 'application#home_true'
 end

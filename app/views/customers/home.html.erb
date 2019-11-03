@@ -4,10 +4,11 @@
 <% for c in @customers %>
 <ul class="customers">
   <li style="font-size: 15px">
-    <span>Name: "<%= c.name %>"</span><br/>
+    <span class="">Name: "<%= c.name %>"</span><br/>
     <span>Phone: "<%= c.phone %>"</span><br/>
     <span>Description: "<%= c.description %>"</span>
 
+    <td><%= button_to 'Добавить в чёрный список', {:controller => "application", :action => "home_true", :id => c.id} , :method=>:delete, class: "btn btn-secondary" %></td>
   </li>
 </ul>
 <% end %>

@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+  include CustomersHelper
+
   def home
     @customers = Customer.where("black = false")
   end
@@ -10,8 +12,7 @@ class CustomersController < ApplicationController
   def black_true
     c = Customer.find_by_phone(params[:customer][:phone])
     if !c.nil?
-      c.black = true
-      c.save
+      customers_black_change(c)
     end
     # flash[:success] = "Пользователь не найден"
     redirect_to black_path
@@ -19,8 +20,8 @@ class CustomersController < ApplicationController
 
   def black_false
     c = Customer.find(params[:id])
-    c.black = false
-    c.save
+    customers_black_change(c)
     redirect_to black_path
   end
+
 end

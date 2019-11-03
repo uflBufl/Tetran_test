@@ -3,10 +3,10 @@
 <div class = "add_black">
 <%= form_for(:customer, url: black_url) do |b| %>
 
-  <%= b.label :phone, "Телефон"  %>
+  <%= b.label :phone, "Добавить в чёрный список по телефону:"  %>
   <%= b.text_field :phone, class: 'form-control' %>
 
-    <%= b.submit "Добавить в чёрный список", class: "btn btn-primary" %>
+    <%= b.submit "Добавить", class: "btn btn-primary" %>
 
 <% end %>
 </div>
@@ -18,7 +18,7 @@
       <span>Phone: "<%= c.phone %>"</span><br/>
       <span>Description: "<%= c.description %>"</span>
 
-      <td><%= button_to 'Удалить из чёрного списка', {:controller => "customers", :action => "black_false", :id => c.id} , :method=>:delete  %></td>
+      <td><%= button_to 'Удалить из чёрного списка', {:controller => "customers", :action => "black_false", :id => c.id} , :method=>:delete, class: "btn btn-secondary"  %></td>
     </li>
   </ul>
 <% end %>
