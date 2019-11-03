@@ -1,0 +1,13 @@
+<% provide(:title, "Home") %>
+<h1 class="title">Пользователи</h1>
+
+<% for c in @customers %>
+<ul class="customers">
+  <li style="font-size: 15px">
+    <span>Name: "<%= c.name %>"</span><br/>
+    <span>Phone: "<%= c.phone %>"</span><br/>
+    <span>Description: "<%= c.description %>"</span>
+
+  </li>
+</ul>
+<% end %>
