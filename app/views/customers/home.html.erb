@@ -1,14 +1,17 @@
 <% provide(:title, "Home") %>
-<h1 class="title">Пользователи</h1>
+<h1 class="title">Покупатели</h1>
 
 <% for c in @customers %>
 <ul class="customers">
   <li style="font-size: 15px">
+
     <span class="">Name: "<%= c.name %>"</span><br/>
     <span>Phone: "<%= c.phone %>"</span><br/>
-    <span>Description: "<%= c.description %>"</span>
+    <span>Description: "<%= c.description %>"</span><br/>
 
+    <%= link_to "Редактировать", edit_customer_url(c), method: :get %>
     <td><%= button_to 'Добавить в чёрный список', {:controller => "application", :action => "home_true", :id => c.id} , :method=>:delete, class: "btn btn-secondary" %></td>
+
   </li>
 </ul>
 <% end %>

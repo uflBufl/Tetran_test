@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   post 'black' => 'customers#black_true'
   delete 'black' => 'customers#black_false'
   delete 'black/home' => 'application#home_true'
+
+  resources :customers, only: [:update, :edit]
 end
