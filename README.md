@@ -8,4 +8,3 @@ Unfortunately, due to time pressure, I could not manage to realize some function
 RoR: 6.0.0
 
 Ruby: 2.5.7
-
